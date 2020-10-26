@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
 
 namespace Kontokollen_2._0
 {
@@ -23,6 +25,18 @@ namespace Kontokollen_2._0
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Browse_btn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                File_path.Text = openFileDialog.FileName; //File.ReadAllText(openFileDialog.FileName);
+        }
+
+        private void Run_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate);
         }
     }
 }

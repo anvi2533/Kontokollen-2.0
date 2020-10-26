@@ -10,8 +10,27 @@
 
         <StackPanel>
 
-            <TextBlock>Test</TextBlock>
-            <TextBlock>Test</TextBlock>
+            <TextBlock Margin="0 20 0 0">File path:</TextBlock>
+            <TextBox x:Name="File_path">"C:\Users\andersv\Google Drive\Coding\R\Ekonomi\index_GUI.R"</TextBox>
+            <Button x:Name="Browse_btn" Click="Browse_btn_Click">Browse...</Button>
+
+            <TextBlock Margin="0 20 0 0">From date:</TextBlock>
+            <DatePicker x:Name="from_date">
+                <DatePicker.SelectedDate>2010-01-01</DatePicker.SelectedDate>
+            </DatePicker>
+
+            <TextBlock Margin="0 20 0 0">To date:</TextBlock>
+            <DatePicker x:Name="to_date">
+                <DatePicker.SelectedDate>2020-12-31</DatePicker.SelectedDate>
+            </DatePicker>
+
+            <TextBlock Margin="0 20 0 0">Kategori:</TextBlock>
+            <ComboBox x:Name="cat_value">
+                <ComboBoxItem IsSelected="True">Mat</ComboBoxItem>
+                <ComboBoxItem>Appar</ComboBoxItem>
+            </ComboBox>
+
+            <Button x:Name="Run_btn" Margin="0 5 0 0" Click="Run_btn_Click">Run</Button>
 
         </StackPanel>
       
