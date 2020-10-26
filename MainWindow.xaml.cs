@@ -36,7 +36,26 @@ namespace Kontokollen_2._0
 
         private void Run_btn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate);
+            // Run R script in command line
+            
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.FileName = "cmd.exe";
+
+            if (mycheckBox.IsChecked == true)
+            {
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.Arguments = "/C rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate + " " + File_path.Text;
+            }
+            else
+            {
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+                startInfo.Arguments = "/K rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate + " " + File_path.Text;
+            }
+
+            process.StartInfo = startInfo;
+            process.Start();
+
         }
     }
 }
