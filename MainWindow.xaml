@@ -8,8 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
-        <TextBlock>Test test</TextBlock>
-        
-        
+        <StackPanel>
+
+            <TextBlock>Test</TextBlock>
+            <TextBlock>Test</TextBlock>
+
+        </StackPanel>
+      
     </Grid>
 </Window>
