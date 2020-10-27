@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Windows.Threading;
 
 namespace Kontokollen_2._0
 {
@@ -42,20 +43,37 @@ namespace Kontokollen_2._0
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.FileName = "cmd.exe";
 
+           
+
             if (mycheckBox.IsChecked == true)
             {
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                startInfo.Arguments = "/C rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate + " " + File_path.Text;
+                startInfo.Arguments = "/C rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate.ToString() + " " + to_date.SelectedDate.ToString() + " " + File_path.Text;
             }
             else
             {
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
-                startInfo.Arguments = "/K rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate + " " + File_path.Text;
+                startInfo.Arguments = "/K rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate.ToString() + " " + to_date.SelectedDate.ToString() + " " + File_path.Text;
             }
 
             process.StartInfo = startInfo;
             process.Start();
 
+            Delay();
+
+        }
+
+        private void Delay()
+        {
+
+            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(10) };
+            timer.Start();
+            timer.Tick += (sender, args) =>
+            {
+                timer.Stop();
+                MessageBox.Show("/K rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate + " " + File_path.Text);
+
+            };
         }
     }
 }
