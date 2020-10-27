@@ -43,8 +43,6 @@ namespace Kontokollen_2._0
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.FileName = "cmd.exe";
 
-           
-
             if (mycheckBox.IsChecked == true)
             {
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;

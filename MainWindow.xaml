@@ -20,7 +20,7 @@
             </DatePicker>
 
             <TextBlock Margin="0 20 0 0">To date:</TextBlock>
-            <DatePicker x:Name="to_date">
+            <DatePicker x:Name="to_date" SelectedDateFormat="Short">
                 <DatePicker.SelectedDate>2020-12-31</DatePicker.SelectedDate>
             </DatePicker>
 
