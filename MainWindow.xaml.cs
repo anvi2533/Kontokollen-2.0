@@ -38,7 +38,10 @@ namespace Kontokollen_2._0
         private void Run_btn_Click(object sender, RoutedEventArgs e)
         {
             // Run R script in command line
-            
+
+            TextBlock1.Text = "Getting result...";
+
+
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.FileName = "cmd.exe";
@@ -69,9 +72,13 @@ namespace Kontokollen_2._0
             timer.Tick += (sender, args) =>
             {
                 timer.Stop();
-                MessageBox.Show("/K rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate + " " + File_path.Text);
+                //MessageBox.Show("/K rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate + " " + File_path.Text);
+                //Main();
+                string path = @"C:\Users\andersv\Google Drive\Coding\R\Ekonomi\" + "mycsv.csv";
+                TextBlock1.Text = System.IO.File.ReadAllText(path);
 
             };
         }
+
     }
 }

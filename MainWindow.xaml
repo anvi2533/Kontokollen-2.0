@@ -28,10 +28,15 @@
             <ComboBox x:Name="cat_value">
                 <ComboBoxItem IsSelected="True">Mat</ComboBoxItem>
                 <ComboBoxItem>Appar</ComboBoxItem>
+                <ComboBoxItem>Drivmedel</ComboBoxItem>
+                <ComboBoxItem>Bil</ComboBoxItem>
+                <ComboBoxItem>Restauranger</ComboBoxItem>
             </ComboBox>
 
             <Button x:Name="Run_btn" Margin="0 5 0 0" Click="Run_btn_Click">Run</Button>
             <CheckBox x:Name="mycheckBox" Margin="0 5 0 0" IsChecked="True">Hidden cmd</CheckBox>
+
+            <TextBlock x:Name="TextBlock1" Margin="0 20 0 0"/>
 
         </StackPanel>
       
