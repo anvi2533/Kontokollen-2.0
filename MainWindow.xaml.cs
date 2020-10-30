@@ -67,7 +67,7 @@ namespace Kontokollen_2._0
         private void Delay()
         {
 
-            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(10) };
+            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(20) };
             timer.Start();
             timer.Tick += (sender, args) =>
             {
