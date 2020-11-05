@@ -40,6 +40,7 @@ namespace Kontokollen_2._0
             // Run R script in command line
 
             TextBlock1.Text = "Getting result...";
+            Image1.Source = new BitmapImage(new Uri(@"C:\Users\andersv\Google Drive\Coding\R\Ekonomi\test.png"));
 
 
             System.Diagnostics.Process process = new System.Diagnostics.Process();
@@ -75,6 +76,9 @@ namespace Kontokollen_2._0
                 //MessageBox.Show("/K rscript " + File_path.Text + " " + cat_value.Text + " " + from_date.SelectedDate + " " + to_date.SelectedDate + " " + File_path.Text);
                 //Main();
                 string path = @"C:\Users\andersv\Google Drive\Coding\R\Ekonomi\" + "mycsv.csv";
+                
+                Image1.Source = new BitmapImage(new Uri(@"C:\Users\andersv\Google Drive\Coding\R\Ekonomi\myplot.png"));
+
                 TextBlock1.Text = System.IO.File.ReadAllText(path);
 
             };
