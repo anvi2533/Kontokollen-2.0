@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using System.Windows.Threading;
+using System.Diagnostics;
+
 
 namespace Kontokollen_2._0
 {
@@ -79,9 +81,19 @@ namespace Kontokollen_2._0
                 
                 Image1.Source = new BitmapImage(new Uri(@"C:\Users\andersv\Google Drive\Coding\R\Ekonomi\myplot.png"));
 
+                hyperlink_1.Text = "TEst";
+
                 TextBlock1.Text = System.IO.File.ReadAllText(path);
 
             };
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            // for .NET Core you need to add UseShellExecute = true
+            // see https://docs.microsoft.com/dotnet/api/system.diagnostics.processstartinfo.useshellexecute#property-value
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
 
     }

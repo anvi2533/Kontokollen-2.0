@@ -36,7 +36,11 @@
             <Button x:Name="Run_btn" Margin="0 5 0 0" Click="Run_btn_Click">Run</Button>
             <CheckBox x:Name="mycheckBox" Margin="0 5 0 0" IsChecked="True">Hidden cmd</CheckBox>
 
-            <Image x:Name="Image1" Margin="0 20 0 0" Width="300" Source="" />            
+            <Image x:Name="Image1" Margin="0 20 0 0" Width="300" Source="" />
+            <TextBlock x:Name="hyperlink_1" Visibility="Visible">          
+                <Hyperlink NavigateUri="C:\Users\andersv\Google Drive\Coding\R\Ekonomi\Rplots.pdf" RequestNavigate="Hyperlink_RequestNavigate">Click here</Hyperlink>
+            </TextBlock>
+            
             <TextBlock x:Name="TextBlock1" Margin="0 20 0 0"/>
 
         </StackPanel>
